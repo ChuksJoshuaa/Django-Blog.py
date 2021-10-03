@@ -1,0 +1,15 @@
+{% extends "guard1.html" %}
+
+
+{% block content %}
+     <h3>{{ objects }}</h3>
+     <p> {{ objects1 }}</p>
+     <p> {{ objects2 }}</p>
+
+    {% for instance in object_list %}
+         <p>{{ instance.id }} - <a href="{{instance.get_absolute_url}}">{{instance.title}}</a></p>
+
+    {% endfor %}
+
+{% endblock %}
+

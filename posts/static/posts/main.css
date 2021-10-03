@@ -1,0 +1,422 @@
+body {
+  background: rgb(140, 135, 122);
+  margin: 0 auto;
+}
+
+header {
+   height: 5vh;
+   background: rgb(64, 61, 55);
+
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+#header1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#header1 h3 {
+  display: block;
+  font-weight: bold;
+  font-family: "Bonheur Royale", cursive;
+  text-align: center;
+  font-size: 1.2em;
+
+}
+
+#header1 h3 a {
+  text-decoration: none;
+  color: red;
+  list-style: none;
+}
+
+.fa-user {
+   color: red;
+}
+.fa-home {
+  color: red;
+}
+
+.fa-sign-in {
+  color: red;
+
+}
+.fa-sign-out {
+  color: red;
+}
+.fa-registered {
+  color: red;
+}
+
+
+#header1 ul {
+  display: block;
+  font-family: "Bonheur Royale", cursive;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 1em;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 1em;
+  margin-top: 1em;
+
+}
+
+#header1 ul li a {
+   text-decoration: none;
+   color: white;
+}
+
+.log {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em;
+  position: relative;
+  top: 5%;
+  right: 5%;
+}
+
+.log a {
+   font-family: "Bonheur Royale", cursive;
+   text-decoration: none;
+   color: white;
+   margin: 10px;
+   margin-left: 0;
+   font-size: 1em;
+}
+
+.main {
+   display: grid;
+   grid-template-columns: 40% 60%;
+   grid-gap: 3px;
+}
+
+
+
+.main1 {
+   height: 250px;
+   width: 80%;
+   /*background: rgb(169, 172, 194);*/
+   position: relative;
+   display: grid;
+   left: 230px;
+   top: 27px;
+
+}
+
+.main2 {
+   height: auto;
+   width: 30%;
+   background: white;
+   position:relative;
+   top: 5%;
+   border: 1px solid black;
+   border-left: 1px solid black;
+   left: 230px;
+
+}
+
+h4 {
+ margin: 20px;
+ font-family: 'Ephesis', cursive;
+ color: red;
+ border-bottom: 1px solid black;
+}
+
+.main3 {
+   height: 145px;
+   margin: 20px;
+   display: grid;
+   grid-template-columns: auto;
+   grid-template-rows: 25% 25% 25% 25%;
+   border: 1px solid black;
+}
+
+.main4 {
+   height: auto;
+   border-bottom: 1px solid black;
+   border-left:  1px solid black;
+   background: white;
+   width: 99%;
+}
+.main4:last-child {
+   border-bottom: none;
+}
+
+.main4 p {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+
+.second1 {
+  border: 0.5px solid black;
+  border-bottom: none;
+  margin-bottom: 20px;
+  background: white;
+  display: grid;
+  grid-template-columns: 12% 88%;
+}
+.second1 img {
+   width: 60px;
+   border-radius: 30px 30px;
+   height: 50px;
+   margin: 10px;
+
+}
+
+.second {
+   margin: 10px;
+   background: white;
+}
+
+.second p {
+   font-size: 0.7em;
+   margin-left: 10px;
+   color: grey;
+   border-bottom: 1px solid black;
+   opacity: 0.5
+}
+
+.second h2 {
+  margin: 10px;
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.second span {
+   font-weight: bold;
+   font-family: 'Caramel', cursive;
+   font-size: 1.2em;
+   color: red;
+   margin-bottom: 0;
+
+}
+
+.span1 {
+   font-size: 0.8em;
+   margin-left: 10px;
+   font-family: "lato", sans-serif;
+}
+
+.span2 {
+   margin-left: 6px;
+
+}
+
+.span2 a {
+    text-decoration: none;
+    font-size: 0.8em;
+    color: brown;
+}
+
+
+
+
+.field {
+  background: white;
+  width: 70%;
+  position: relative;
+  top: -3%;
+  margin: 10px;
+  font-size: 0.8em;
+  text-align: stretch;
+}
+
+.fields {
+  width: auto;
+  margin: 10px;
+}
+
+
+
+
+
+.form {
+  margin: 10px;
+  position: relative;
+  bottom: 10%;
+
+}
+.both {
+   position: relative;
+   bottom: 12%;
+}
+.both h3 {
+   font-size: 1.5em;
+   font-weight: bold;
+   font-family: "Bonheur Royale", cursive;
+}
+
+
+.both1 a {
+   color: red;
+}
+
+.join {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.profile {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: black;
+}
+
+button {
+   background: white;
+   color: black;
+   font-weight: bold;
+   font-size: 1em;
+}
+
+.message {
+   height: 20px;
+   width: 70%;
+   position: relative;
+   bottom: 10%;
+   background: rgb(133, 194, 116);
+   color: white;
+   text-align: center
+   font-size: 0.7em;
+
+}
+.media {
+   height: auto;
+   weight: 70%;
+   width: 150px;
+
+   display: flex;
+   flex-direction: row;
+}
+.bar {
+  color: brown;
+  font-weight: bold;
+  font-family: "Bonheur Royale", cursive;
+}
+
+.media img {
+   width: 150px;
+   margin-left: 10px;
+   border-radius: 70px 70px;
+}
+
+.media1 h2 {
+   margin-left: 10px;
+   font-size: 1.2em;
+   font-weight: bold;
+}
+
+.media1 p {
+  margin-left: 10px;
+}
+
+.media0 {
+  background: white;}
+
+@media only screen and (max-width:550px) {
+    ul li {
+      width: 100%;
+
+    }
+
+    .field {
+      width: auto;
+      position: relative;
+      right: 30%;
+    }
+    .main {
+       height: auto;
+       width: auto;
+    }
+    .main1 {
+       height: 250px;
+       width: 230px;
+       /*background: rgb(169, 172, 194);*/
+       position: relative;
+       left: 10px;
+       top: 27px;
+    }
+
+    .second1 img {
+       width: 30px;
+       border-radius: 20px;
+       margin: 5px;
+    }
+
+    .second h2 {
+      margin: 10px;
+      font-size: 1.2em;
+      font-family: 'Ephesis', cursive;
+    }
+
+    .main {
+       display: grid;
+       grid-template-columns: 13% 87%;
+       grid-gap: 1px;
+    }
+
+    .main2 {
+      width: 45%;
+    }
+
+    h4 {
+      font-size: 1.2em;
+    }
+
+    .main2 p {
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    .main3 {
+       height: 160px;
+       margin: 20px;
+    }
+
+    .main4 {
+       width: 94%;
+       border-bottom: 1px solid black;
+       border-right: none;
+       border-left: none;
+       margin: 2px;
+    }
+
+    #header1 h3 {
+       font-size: 1em;
+    }
+
+    #header1 ul {
+        width: 25%;
+    }
+    #header1 ul li {
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+
+    .log {
+      width: 24%;
+    }
+    .log a {
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+
+}
+
+.page {
+   margin-top: 0;
+   margin-bottom: 0;
+}

@@ -1,0 +1,22 @@
+{% extends "post_base.html" %}
+{% load static %}
+
+<!--The btn is a bootstrap buttons-->
+
+
+{% block content %}
+    <div class="second1">
+        <img  width="40px;" src="{{ object.author.profile.image.url}}">
+       <div class="second">
+           <p> By <span><a href="{% url 'user-post' object.author.username %}">{{ object.author}}</a>
+           </span>on {{ object.date_posted|date:"F d, Y" }}</p>
+           <!-- to ensure only the user logged in can access the update button-->
+           {% if object.author == user %}
+           <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="{% url 'post-update' object.id %}">Update</a>
+           <a class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post-delete' object.id %}">Delete</a>
+           {% endif %}
+           <h2>{{ object.title }}</h2>
+        <div class="span1">{{ object.content }}</div>
+       </div>
+    </div>
+{% endblock %}

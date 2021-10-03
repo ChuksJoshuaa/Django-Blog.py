@@ -1,0 +1,14 @@
+{% extends "Blog_base.html" %}
+
+
+{% block content %}
+
+     <p style="color: blue;">{{ login1 }}</p>
+     <p style="color: blue;">{{ login2 }}</p>
+     <p style="color: blue;">{{ login3 }}</p>
+
+     {% for instance in object_list %}
+           <p>{{instance.id}} - <a href="{{instance.get_absolute_url}}">{{instance.title}}</a></p>
+     {% endfor %}
+
+{% endblock %}

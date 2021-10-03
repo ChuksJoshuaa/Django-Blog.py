@@ -1,0 +1,9 @@
+{% extends "Blog_base.html" %}
+
+
+{% block content %}
+<form action="." method="POST"> {% csrf_token %}
+    <p>{{ form1.as_p }}</p>
+    <input type="submit" value="save">
+</form>
+{% endblock %}s

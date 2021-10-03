@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+ <head>
+    <meta charset="UTF-8">
+    <title>Chuks Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+          integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/main.css' %}" >
+ </head>
+  <body>
+     <header>
+             <div id="header1">
+             <h3><a href="{% url 'post-home' %}">Django post</a></h3>
+             <ul style="font-size: 1em;
+                         position: relative;
+                         top: 13%;
+                         color: red;">
+                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="{% url 'post-home' %}">Home</a></li>
+                 <li><i class="fa fa-user" aria-hidden="true"></i><a href="{% url 'post-about' %}">About</a></li>
+             </ul>
+             </div>
+              <div class="log">
+                  <!-- the user authentication system means when the user is logged in -->
+                 {% if user.is_authenticated %}
+                  <div><a href="{% url 'post-create' %}">New Post</a></div>
+                  <div><i class="fa fa-user"></i><a href="{% url 'user_profile' %}">Profile</a></div>
+                  <div><i class="fa fa-sign-out"></i><a href="{% url 'user_logout' %}">Logout</a></div>
+                 {% else %}
+                 <div><i class="fa fa-sign-in"></i><a href="{% url 'user_login' %}">Login</a></div>
+                 <div><i class="fa-thin fa-registered"></i><a href="{% url 'user_register' %}">Register</a></div>
+                 {% endif %}
+              </div>
+     </header>
+     <main>
+       <div class="main">
+         <div class="main1">
+             {% if messages %}
+               {% for message in messages %}
+                  <div class="message">{{ message }}</div>
+                {% endfor %}
+             {% endif %}
+            <br>
+         {% block content %}
+         replace me
+         {% endblock %}
+        </div>
+         <div class="main2">
+            <h4>Our Sidebar</h4>
+            <p style="margin: 20px;">You can put any information here<br>you like. </p>
+            <div class="main3">
+                <div class="main4">
+                <p>Latest posts</p>
+                </div>
+                <div class="main4">
+                <p>Announcement</p>
+                </div>
+                <div class="main4">
+                <p>Calender</p>
+                </div>
+                <div class="main4">
+                <p>etc</p>
+                </div>
+            </div>
+         </div>
+
+
+         </div>
+
+
+
+
+
+     </main>
+     <footer>
+
+     </footer>
+
+  </body>
+</html>
