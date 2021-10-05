@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os.path
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l3mv_t+=e$2y5u(qb-lsd112btp^tz&rp1teu2c39*968#b7f0'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysapaapp.herokuapp.com']
 
 
 # Application definition
@@ -130,6 +131,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
@@ -139,8 +142,8 @@ LOGIN_REDIRECT_URL = 'post-home'
 LOGIN_URL = 'user_login'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = 'wmltsqwgdafjpniq'
-EMAIL_HOST_USER = 'chuksmbanasoj@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_USER')
+EMAIL_HOST_USER = os.environ.get('EMAIL_PASSWORD')
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
@@ -152,17 +155,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-
-#Default email settings
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#ACCOUNT_EMAIL_VERIFICATION = 'none'
-#EMAIL_HOST = 'smtp.gmail.com'
-#EMAIL_PORT = 465
-#EMAIL_USE_TLS = True
-#EMAIL_HOST_USER = 'chuksmbanasoj@gmail.com'
-#EMAIL_HOST_PASSWORD = 'wmltsqwgdafjpniq'
-# email_host = 'smtp-relay-sendinblue.com'
-#EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
-#MAILER_EMAIL_BACKEND = EMAIL_BACKEND
-#EMAIL_HOST = 'secure.serverfoo.com'
 
