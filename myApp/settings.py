@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os.path
+import django_heroku
 import os
 from pathlib import Path
 
@@ -153,6 +154,6 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+django_heroku.settings(locals())
 
 
