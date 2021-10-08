@@ -1,12 +1,21 @@
-body {
-  background: rgb(140, 135, 122);
-  margin: 0 auto;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+main {
+   max-width: 980px;
+   width: 90%;
+   margin: 0 auto;
 }
 
 header {
-   height: 5vh;
-   background: rgb(64, 61, 55);
-
+   /*background: rgb(64, 61, 55);*/
+   background: black;
+   width: 100%;
    display: flex;
    justify-content: space-around;
    align-items: center;
@@ -15,16 +24,18 @@ header {
 
 #header1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 #header1 h3 {
-  display: block;
+  white-space: normal;
+  z-index: 1;
+  display: inline-block;
   font-weight: bold;
-  font-family: "Bonheur Royale", cursive;
-  text-align: center;
-  font-size: 1.2em;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 10px;
+  font-size: 1.5rem;
 
 }
 
@@ -34,32 +45,17 @@ header {
   list-style: none;
 }
 
-.fa-user {
-   color: red;
+#header1 h3 a:hover {
+   color: white;
 }
-.fa-home {
-  color: red;
-}
-
-.fa-sign-in {
-  color: red;
-
-}
-.fa-sign-out {
-  color: red;
-}
-.fa-registered {
-  color: red;
-}
-
 
 #header1 ul {
-  display: block;
-  font-family: "Bonheur Royale", cursive;
+  display: inline-block;
+  font-family: 'Ubuntu', sans-serif;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   justify-content: space-around;
-  font-size: 1em;
+  font-size: 1.3rem;
 }
 
 ul li {
@@ -71,104 +67,68 @@ ul li {
 
 #header1 ul li a {
    text-decoration: none;
+   color: red;
+   transition: color 500ms ease;
+}
+
+#header1 ul li a:hover {
    color: white;
 }
 
 .log {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
   align-items: center;
   margin: 1em;
   position: relative;
   top: 5%;
-  right: 5%;
+  left: 10%;
 }
 
 .log a {
-   font-family: "Bonheur Royale", cursive;
+   font-family: 'Ubuntu', sans-serif;
    text-decoration: none;
-   color: white;
+   color: red;
    margin: 10px;
    margin-left: 0;
    font-size: 1em;
+   transition: color 500ms ease;
+}
+
+.log a:hover {
+  color: white;
 }
 
 .main {
-   display: grid;
-   grid-template-columns: 40% 60%;
-   grid-gap: 3px;
+   position: relative;
+   left: 20px;
+   top: 27px;
+   max-width: 980px;
+   width: 80%;
 }
-
-
 
 .main1 {
    height: 250px;
-   width: 80%;
+
    /*background: rgb(169, 172, 194);*/
    position: relative;
    display: grid;
-   left: 230px;
-   top: 27px;
-
 }
-
-.main2 {
-   height: auto;
-   width: 30%;
-   background: white;
-   position:relative;
-   top: 5%;
-   border: 1px solid black;
-   border-left: 1px solid black;
-   left: 230px;
-
-}
-
-h4 {
- margin: 20px;
- font-family: 'Ephesis', cursive;
- color: red;
- border-bottom: 1px solid black;
-}
-
-.main3 {
-   height: 145px;
-   margin: 20px;
-   display: grid;
-   grid-template-columns: auto;
-   grid-template-rows: 25% 25% 25% 25%;
-   border: 1px solid black;
-}
-
-.main4 {
-   height: auto;
-   border-bottom: 1px solid black;
-   border-left:  1px solid black;
-   background: white;
-   width: 99%;
-}
-.main4:last-child {
-   border-bottom: none;
-}
-
-.main4 p {
-  text-align: center;
-  font-size: 1em;
-  font-weight: bold;
-}
-
 
 .second1 {
-  border: 0.5px solid black;
-  border-bottom: none;
+  border: 1px solid silver;
+  opacity: 0.8;
   margin-bottom: 20px;
   background: white;
   display: grid;
-  grid-template-columns: 12% 88%;
+  grid-template-columns: 9% 91%;
 }
 .second1 img {
    width: 60px;
-   border-radius: 30px 30px;
+   border-radius: 50%;
    height: 50px;
    margin: 10px;
 
@@ -191,6 +151,7 @@ h4 {
   margin: 10px;
   margin-top: 0;
   font-size: 1.5rem;
+  font-family: 'Ubuntu', sans-serif;
   margin-bottom: 0;
 }
 
@@ -200,7 +161,6 @@ h4 {
    font-size: 1.2em;
    color: red;
    margin-bottom: 0;
-
 }
 
 .span1 {
@@ -220,9 +180,6 @@ h4 {
     color: brown;
 }
 
-
-
-
 .field {
   height: 500px;
   background: white;
@@ -238,10 +195,6 @@ h4 {
   width: auto;
   margin: 10px;
 }
-
-
-
-
 
 .form {
   margin: 10px;
@@ -326,99 +279,18 @@ button {
 }
 
 .media0 {
-  background: white;}
-
-@media only screen and (max-width:550px) {
-    ul li {
-      width: 100%;
-
-    }
-
-    .field {
-      width: auto;
-      position: relative;
-      right: 30%;
-    }
-    .main {
-       height: auto;
-       width: auto;
-    }
-    .main1 {
-       height: 250px;
-       width: 230px;
-       /*background: rgb(169, 172, 194);*/
-       position: relative;
-       left: 10px;
-       top: 27px;
-    }
-
-    .second1 img {
-       width: 30px;
-       border-radius: 20px;
-       margin: 5px;
-    }
-
-    .second h2 {
-      margin: 10px;
-      font-size: 1.2em;
-      font-family: 'Ephesis', cursive;
-    }
-
-    .main {
-       display: grid;
-       grid-template-columns: 13% 87%;
-       grid-gap: 1px;
-    }
-
-    .main2 {
-      width: 45%;
-    }
-
-    h4 {
-      font-size: 1.2em;
-    }
-
-    .main2 p {
-      font-size: 1em;
-      font-weight: bold;
-    }
-
-    .main3 {
-       height: 160px;
-       margin: 20px;
-    }
-
-    .main4 {
-       width: 94%;
-       border-bottom: 1px solid black;
-       border-right: none;
-       border-left: none;
-       margin: 2px;
-    }
-
-    #header1 h3 {
-       font-size: 1em;
-    }
-
-    #header1 ul {
-        width: 25%;
-    }
-    #header1 ul li {
-        font-size: 0.8em;
-        font-weight: bold;
-    }
-
-    .log {
-      width: 24%;
-    }
-    .log a {
-        font-size: 0.8em;
-        font-weight: bold;
-    }
-
+  background: white;
 }
 
-.page {
-   margin-top: 0;
-   margin-bottom: 0;
+@media screen and (max-width: 550px) {
+     .main {
+       width: 100%;
+     }
+
+     header {
+       max-width: 1300px;
+       font-size: 0.9rem;
+       margin-left: 20px;
+       width: 100%;
+     }
 }

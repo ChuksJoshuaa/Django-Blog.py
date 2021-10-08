@@ -12,6 +12,5 @@ urlpatterns = [
     path('create/', views.create_view.as_view(), name='post-create'),
     path('about/', views.aboutview, name='post-about')
 
-
 ]
 
