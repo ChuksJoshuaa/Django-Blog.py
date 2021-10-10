@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from django import forms
+
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -53,3 +54,6 @@ def profile(request):
     }
 
     return render(request, 'user_profile.html', context)
+
+
+

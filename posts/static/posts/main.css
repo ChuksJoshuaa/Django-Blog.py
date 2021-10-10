@@ -5,6 +5,9 @@
  padding: 0;
  box-sizing: border-box;
 }
+body {
+  background: rgba(190, 197, 209, 0.4);
+}
 
 main {
    max-width: 980px;
@@ -14,12 +17,12 @@ main {
 
 header {
    /*background: rgb(64, 61, 55);*/
-   background: black;
    width: 100%;
    display: flex;
    justify-content: space-around;
    align-items: center;
    margin-bottom: 25px;
+   overflow: hidden;
 }
 
 #header1 {
@@ -85,7 +88,6 @@ ul li {
   margin: 1em;
   position: relative;
   top: 5%;
-  left: 10%;
 }
 
 .log a {
@@ -288,9 +290,18 @@ button {
      }
 
      header {
-       max-width: 1300px;
        font-size: 0.9rem;
        margin-left: 20px;
        width: 100%;
+       overflow: hidden;
      }
+
+     .log {
+       flex-direction: column;
+     }
+
+     .second1 img {
+       width: 100%;
+     }
+
 }

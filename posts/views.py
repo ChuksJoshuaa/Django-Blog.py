@@ -1,13 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import postmode
+from .models import postmode,Comment
+from .forms import CommentForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
+from datetime import datetime
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (ListView,
                                   DetailView,
                                   CreateView,
                                   UpdateView,
-                                  DeleteView)
+                                  DeleteView,)
 from .forms import post_form
 
 # Create your views here.
@@ -116,3 +119,44 @@ class delete_view(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def get_success_url(self):
         return "/posts/home/"
+
+def comment_view(request, id):
+    obj = Comment.objects.get(id=id)
+    obj = Comment.objects.all()
+    if obj == obj:
+        context = {
+            "main": obj
+        }
+        return render(request, "add_comment.html", context)
+
+    else:
+        print("None")
+
+def add_comment(request, id):
+    eachobject = postmode.objects.get(id=id)
+    form = CommentForm()
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=eachobject)
+        if form.is_valid():
+            name = request.user.username
+            body = form.cleaned_data.get('comment_body')
+            c = Comment(title=eachobject, commenter_name=name, comment_body=body, date_added=datetime.now())
+            c.save()
+            return redirect('post-home')
+        else:
+            print('form is invalid')
+    else:
+        form = CommentForm()
+    context = {
+        'formmy': form
+    }
+
+    return render(request, 'post-comment.html', context)
+
+def delete_comment(request, pk):
+    comment = Comment.objects.filter(object=pk).last()
+    object_id = comment.object.id
+    comment.delete()
+    return redirect(reverse('post-detail', args=[object_id]))
+
+

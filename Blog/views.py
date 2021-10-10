@@ -32,9 +32,7 @@ def Article_form_view(request):
                 return my_form
 
         content = {
-
            "form": my_form
-
         }
         return render(request, "article_detail.html", content)
 

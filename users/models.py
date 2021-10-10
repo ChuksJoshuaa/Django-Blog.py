@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 from PIL import Image
 # Create your models here.
 
@@ -19,4 +20,7 @@ class Profile(models.Model):
              output_size = (300, 300)
              img.thumbnail(output_size)
              img.save(self.image.path)
+
+
+
 

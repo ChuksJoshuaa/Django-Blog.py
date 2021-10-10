@@ -1,0 +1,10 @@
+{% extends "post_base.html" %}
+{% block content %}
+   <div>
+       {% for instance in main %}
+        <h6>By {{ instance.commenter_name }} on {{ instance.date_added }}</h6>
+        <p>- {{ instance.comment_body }}</p>
+       {% endfor %}
+   </div>
+
+{% endblock %}
