@@ -54,12 +54,49 @@ class Userlist_view(ListView):
 class detail_view(DetailView):
     model = postmode
     template_name = "post_detail.html"
-    queryset = postmode.objects.all()
 
     def get_object(self, queryset=None):
         id = self.kwargs.get("id")
         return get_object_or_404(postmode, id=id)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        #pk = self.kwargs["pk"]
+        id = self.kwargs["id"]
+
+        form = CommentForm()
+        post = get_object_or_404(postmode, id=id)
+        comments = post.comment_set.all()
+
+        context['post'] = post
+        context['comments'] = comments
+        context['form'] = form
+        return context
+
+
+    def post(self, request, *args, **kwargs):
+        form = CommentForm(request.POST)
+        self.object = self.get_object()
+        context = super().get_context_data(**kwargs)
+
+        post = postmode.objects.filter(id=self.kwargs['id'])[0]
+        comments = post.comment_set.all()
+
+        context['post'] = post
+        context['comments'] = comments
+        context['form'] = form
+
+        if form.is_valid():
+            name = request.user.username
+            body = form.cleaned_data['comment_body']
+            comment = Comment.objects.create(commenter_name=name, comment_body=body, post=post)
+
+        else:
+            form = CommentForm()
+            context['form'] = form
+            return self.render_to_response(context=context)
+
+        return self.render_to_response(context=context)
 
 #We use the loginrequiredmixin so that when the app is logged out
 #no user is allowed to create a new post unless the user is logged in
@@ -120,38 +157,7 @@ class delete_view(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def get_success_url(self):
         return "/posts/home/"
 
-def comment_view(request, id):
-    obj = Comment.objects.get(id=id)
-    obj = Comment.objects.all()
-    if obj == obj:
-        context = {
-            "main": obj
-        }
-        return render(request, "add_comment.html", context)
 
-    else:
-        print("None")
-
-def add_comment(request, id):
-    eachobject = postmode.objects.get(id=id)
-    form = CommentForm()
-    if request.method == 'POST':
-        form = CommentForm(request.POST, instance=eachobject)
-        if form.is_valid():
-            name = request.user.username
-            body = form.cleaned_data.get('comment_body')
-            c = Comment(title=eachobject, commenter_name=name, comment_body=body, date_added=datetime.now())
-            c.save()
-            return redirect('post-home')
-        else:
-            print('form is invalid')
-    else:
-        form = CommentForm()
-    context = {
-        'formmy': form
-    }
-
-    return render(request, 'post-comment.html', context)
 
 def delete_comment(request, pk):
     comment = Comment.objects.filter(object=pk).last()

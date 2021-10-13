@@ -18,13 +18,17 @@ class postmode(models.Model):
         return reverse('post-detail', kwargs={"id": self.id})
 
 class Comment(models.Model):
-    title = models.ForeignKey(postmode, related_name="comments", on_delete=models.CASCADE)
+    post = models.ForeignKey(postmode, on_delete=models.CASCADE)
     commenter_name = models.CharField(max_length=200)
     comment_body = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ('-date_added',)
 
     def __str__(self):
-        return 'Comment {} by {}'.format(self.comment_body, self.commenter_name)
+        return 'Comment {}'.format(self.commenter_name)
 
 
 class PostComment(models.Model):

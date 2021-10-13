@@ -22,7 +22,6 @@ header {
    justify-content: space-around;
    align-items: center;
    margin-bottom: 25px;
-   overflow: hidden;
 }
 
 #header1 {
@@ -80,7 +79,7 @@ ul li {
 
 .log {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   justify-content: space-between;
   padding: 10px;
   margin: 10px;
@@ -146,13 +145,12 @@ ul li {
    margin-left: 10px;
    color: grey;
    border-bottom: 1px solid black;
-   opacity: 0.5
 }
 
 .second h2 {
   margin: 10px;
   margin-top: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: 'Ubuntu', sans-serif;
   margin-bottom: 0;
 }
@@ -169,11 +167,11 @@ ul li {
    font-size: 0.8em;
    margin-left: 10px;
    font-family: "lato", sans-serif;
+   margin-bottom: 20px;
 }
 
 .span2 {
    margin-left: 6px;
-
 }
 
 .span2 a {
@@ -181,6 +179,31 @@ ul li {
     font-size: 0.8em;
     color: brown;
 }
+
+.comment span {
+   font-weight: bold;
+   font-family: "lato", sans-serif;
+   font-size: 1rem;
+   color: red;
+   margin-bottom: 0;
+   border-bottom: none;
+}
+
+.comment p {
+   font-size: 0.7rem;
+   margin-left: 10px;
+   font-weight: bold;
+   color: grey;
+   border-bottom: none;
+}
+
+.cont {
+  position: relative;
+  left: 2%;
+  width: 70%;
+
+}
+
 
 .field {
   height: 500px;
@@ -290,14 +313,10 @@ button {
      }
 
      header {
+       position: relative;
        font-size: 0.9rem;
        margin-left: 20px;
        width: 100%;
-       overflow: hidden;
-     }
-
-     .log {
-       flex-direction: column;
      }
 
      .second1 img {
@@ -305,3 +324,11 @@ button {
      }
 
 }
+
+@media screen and (max-width: 550px) {
+    header {
+       position: relative;
+        width: 100%;
+    }
+}
+

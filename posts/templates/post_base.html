@@ -12,33 +12,34 @@
    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <link rel="stylesheet" type="text/css" href="{% static 'posts/main.css' %}">
+
       <title>Chuks Project</title>
  </head>
   <body>
       <div style="background-color: black;">
          <header>
-             <div id="header1">
-             <h3><a href="{% url 'post-home' %}">Blog</a></h3>
-             <ul style="font-size: 1em;
-                         position: relative;
-                         top: 13%;
-                         color: red;">
-                 <li><a href="{% url 'post-home' %}">Home</a></li>
-                 <li><a href="{% url 'post-about' %}">About</a></li>
-             </ul>
-             </div>
-              <div class="log">
-                  <!-- the user authentication system means when the user is logged in -->
-                 {% if user.is_authenticated %}
-                  <div><a href="{% url 'post-create' %}">Post</a></div>
-                  <div><a href="{% url 'user_profile' %}">Profile</a></div>
-                  <div><a href="{% url 'user_logout' %}">Logout</a></div>
-                 {% else %}
-                 <div><a href="{% url 'user_login' %}">Login</a></div>
-                 <div><a href="{% url 'user_register' %}">Register</a></div>
-                 {% endif %}
-              </div>
+               <div id="header1">
+                   <h3><a href="{% url 'post-home' %}">Blog</a></h3>
+                 <ul class="nav2"   style="font-size: 1em;
+                             position: relative;
+                             top: 13%;
+                             color: red;">
+                     <li><a href="{% url 'post-home' %}">Home</a></li>
+
+                 </ul>
+               </div>
+               <div class="log">
+                   {% if user.is_authenticated %}
+                      <div><a href="{% url 'post-create' %}">Post</a></div>
+                      <div><a href="{% url 'user_profile' %}">Profile</a></div>
+                      <div><a href="{% url 'user_logout' %}">Logout</a></div>
+                   {% else %}
+                     <div><a href="{% url 'user_login' %}">Login</a></div>
+                     <div><a href="{% url 'user_register' %}">Register</a></div>
+                   {% endif %}
+               </div>
          </header>
       </div>
      <main>
@@ -62,3 +63,7 @@
 
   </body>
 </html>
+
+<!-- <div class="log">
+                   the user authentication system means when the user is logged in -->
+                <!--
