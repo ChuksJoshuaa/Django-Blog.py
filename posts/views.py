@@ -14,6 +14,7 @@ from django.views.generic import (ListView,
 from .forms import post_form
 
 # Create your views here.
+@login_required
 def homeview(request):
     obj = postmode.objects.all()
 
@@ -34,7 +35,7 @@ def aboutview(request):
 #if you want to use a class based view:
 #Note class based view use object_list in ListView but we are using posts
 
-class list_view(ListView):
+class list_view(LoginRequiredMixin, ListView):
     model = postmode
     template_name = "post_home.html"
     context_object_name = 'posts'
@@ -52,7 +53,7 @@ class Userlist_view(ListView):
             user = get_object_or_404(User, username=self.kwargs.get('username'))
             return postmode.objects.order_by('-date_posted').filter(author=user)
 
-class detail_view(DetailView):
+class detail_view(LoginRequiredMixin, DetailView):
     model = postmode
     template_name = "post_detail.html"
 
