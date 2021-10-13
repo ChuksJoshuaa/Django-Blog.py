@@ -1,6 +1,7 @@
 from django.urls import reverse
 from django.db import models
 from django.utils import timezone
+from PIL import Image
 from datetime import datetime
 from django.contrib.auth.models import User
 # Create your models here.
@@ -10,6 +11,7 @@ class postmode(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.title
@@ -33,6 +35,11 @@ class Comment(models.Model):
 class PostComment(models.Model):
     sno = models.AutoField(primary_key=True)
 
+class CommentUserProfile(models.Model):
+   user = models.OneToOneField(User, on_delete=models.CASCADE)
+   user_image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
 
 
+class PostImage(models.Model):
+    image = models.ImageField(upload_to='myApp/posts/media/')

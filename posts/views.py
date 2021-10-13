@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import postmode,Comment
+from .models import postmode,Comment, CommentUserProfile, PostImage
 from .forms import CommentForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -16,6 +16,7 @@ from .forms import post_form
 # Create your views here.
 def homeview(request):
     obj = postmode.objects.all()
+
     context = {
         "posts": obj
     }

@@ -30,7 +30,7 @@ header {
   align-items: center;
 }
 
-#header1 h3 {
+/*#header1 h3 {
   white-space: normal;
   z-index: 1;
   display: inline-block;
@@ -49,6 +49,11 @@ header {
 
 #header1 h3 a:hover {
    color: white;
+}*/
+
+
+#header1 img {
+   display: inline-block;
 }
 
 #header1 ul {
@@ -182,9 +187,9 @@ ul li {
 
 .comment span {
    font-weight: bold;
-   font-family: "lato", sans-serif;
+   font-family: 'Caramel', cursive;
    font-size: 1rem;
-   color: red;
+   color: #4287f5;
    margin-bottom: 0;
    border-bottom: none;
 }
@@ -193,7 +198,7 @@ ul li {
    font-size: 0.7rem;
    margin-left: 10px;
    font-weight: bold;
-   color: grey;
+   color: black;
    border-bottom: none;
 }
 
@@ -308,6 +313,11 @@ button {
 }
 
 @media screen and (max-width: 550px) {
+     main {
+       position: relative;
+       right: 5%;
+     }
+
      .main {
        width: 100%;
      }

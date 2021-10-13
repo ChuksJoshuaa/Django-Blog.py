@@ -21,8 +21,8 @@
            {% if comments %}
                 {% for comment in comments %}
                  <div class="comment">
-                     <p><span>-{{comment.commenter_name}}</span> posted on {{ comment.date_added }}</p>
-                   <p>{{ comment.comment_body }}</p>
+                     <p><span>{{comment.commenter_name}}</span> posted on {{ comment.date_added }}</p>
+                   <p>-{{ comment.comment_body }}</p>
                  </div>
                 {% endfor %}
            {% endif %}
