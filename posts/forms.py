@@ -17,3 +17,9 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'comment_body': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)
+        self.fields['comment_body'].widget.attrs.update({
+            'autocomplete': 'off'
+        })

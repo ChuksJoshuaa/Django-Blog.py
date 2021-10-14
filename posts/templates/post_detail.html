@@ -21,7 +21,7 @@
            {% if comments %}
                 {% for comment in comments %}
                  <div class="comment">
-                     <p><span>{{comment.commenter_name}}</span> posted on {{ comment.date_added }}</p>
+                   <p><span>{{comment.commenter_name}}</span> posted on {{ comment.date_added }}</p>
                    <div class="com">-{{ comment.comment_body }}</div>
                  </div>
                 {% endfor %}
@@ -31,7 +31,7 @@
              Leave a Comment
            </h4>
            <div class="cont">
-             <form action="." method="POST" enctype="multipart/form-data">{% csrf_token %}
+             <form action="." autocomplete="off" method="POST">{% csrf_token %}
                  {{ form }}
                  <input style="background-color: black; color: white;" type="submit" name="Submit">
              </form>

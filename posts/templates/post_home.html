@@ -5,7 +5,7 @@
 {% block content %}
         {% for instance in posts %}
     <div class="second1">
-        <img  width="40px;" src="{{ instance.author.profile.image.url}}">
+        <a href="{{ instance.author.profile.image.url }}"><img  width="40px;" src="{{ instance.author.profile.image.url}}"></a>
        <div class="second">
           <p><span><a style="text-decoration: none;"
                       href="{% url 'user-post' instance.author.username %}">{{ instance.author}}</a>
