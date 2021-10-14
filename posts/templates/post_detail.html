@@ -22,7 +22,7 @@
                 {% for comment in comments %}
                  <div class="comment">
                      <p><span>{{comment.commenter_name}}</span> posted on {{ comment.date_added }}</p>
-                   <p>-{{ comment.comment_body }}</p>
+                   <div class="com">-{{ comment.comment_body }}</div>
                  </div>
                 {% endfor %}
            {% endif %}
