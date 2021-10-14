@@ -68,7 +68,7 @@ header {
 
 ul li {
   list-style: none;
-  margin-left: 1em;
+  margin-left: 0.5em;
   margin-top: 1em;
 
 }
@@ -506,6 +506,8 @@ section {
 		padding: 10px 35px;
 	}
 
+
+
 }
 
 @media (max-width: 800px) {
@@ -538,7 +540,7 @@ section {
 	}
 
     main {
-      margin-bottom: 20%;
+      margin-bottom: 30%;
     }
 }
 
@@ -546,7 +548,6 @@ section {
      main {
        position: relative;
        right: 5%;
-       margin-bottom: 10%;
      }
 
      .main {
@@ -572,17 +573,20 @@ section {
 
 
 @media screen and (max-width: 400px) {
-   main {
-    margin-bottom: 15%;
-   }
 
    .media0 {
     width: 100%;
    }
 }
-@media screen and (max-width: 280px) {
-   main {
-    margin-bottom: 20%;
+@media screen and (max-width: 340px) {
+   #header1 ul li i {
+    display: none;
    }
 
+}
+
+@media screen and (max-width: 280px) {
+   main {
+     margin-bottom: 30%;
+   }
 }
