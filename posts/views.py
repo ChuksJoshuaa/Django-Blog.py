@@ -56,6 +56,7 @@ class Userlist_view(ListView):
 class detail_view(LoginRequiredMixin, DetailView):
     model = postmode
     template_name = "post_detail.html"
+    paginate_by = 7
 
     def get_object(self, queryset=None):
         id = self.kwargs.get("id")

@@ -5,8 +5,8 @@ class post_form(forms.ModelForm):
     class Meta:
         model = postmode
         fields = [
-            'title',
             'image',
+            'title',
             'content'
         ]
 
