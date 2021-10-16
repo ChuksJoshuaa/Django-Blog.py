@@ -32,6 +32,7 @@
 
                  </ul>
                </div>
+             <!-- the user authentication system means when the user is logged in -->
                <div class="log">
                    {% if user.is_authenticated %}
                    <div><a href="{% url 'post-create' %}">Post</a></div>
@@ -58,11 +59,9 @@
              {% endblock %}
             </div>
        </div>
-     </main>
-      <section>Example 5</section>
-     <footer class="footer">
 
-			<!--<div class="footer1">
+      <!--<div class="footer">
+			<div class="footer1">
 
 				<img  width="80px;" style="border-radius: 50%;" src="{% static 'posts/media/Blog.jpg'%}">
 
@@ -75,12 +74,11 @@
 					<a href="https://github.com/ChuksMbanaso"><i class="fa fa-github"></i></a>
 				</div>
 
-			</div>-->
-     </footer>
-
+			</div>
+      </div>-->
+  </main>
   </body>
 </html>
 
-<!-- <div class="log">
-                   the user authentication system means when the user is logged in -->
-                <!--
+
+

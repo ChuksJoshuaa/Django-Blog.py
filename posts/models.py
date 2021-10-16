@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 class postmode(models.Model):
     image = models.ImageField(upload_to='myApp/posts/media/', null=False, blank=False)
-    title = models.CharField(max_length=60)
+    title = models.CharField(max_length=50)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
