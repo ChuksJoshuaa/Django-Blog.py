@@ -19,7 +19,6 @@ class Migration(migrations.Migration):
             name='postmode',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.ImageField(upload_to='')),
                 ('title', models.CharField(max_length=100)),
                 ('content', models.TextField()),
                 ('date_posted', models.DateTimeField(default=django.utils.timezone.now)),
