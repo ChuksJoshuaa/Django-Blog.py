@@ -6,6 +6,7 @@ class post_form(forms.ModelForm):
         model = postmode
         fields = [
             'title',
+            'image',
             'content'
         ]
 

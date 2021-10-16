@@ -11,13 +11,19 @@
            <p> By <span><a href="{% url 'user-post' object.author.username %}">{{ object.author}}</a>
            </span>on {{ object.date_posted|date:"F d, Y" }}</p>
            <!-- to ensure only the user logged in can access the update button-->
-           {% if object.author == user %}
-           <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="{% url 'post-update' object.id %}">Update</a>
-           <a class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post-delete' object.id %}">Delete</a>
-           {% endif %}
+
+           <div class="tion">
+              {% if object.author == user %}
+                  <div style="display: flex; margin: 0 10px;">
+                   <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="{% url 'post-update' object.id %}">Update</a>
+                   <a style="margin-left: 1%;" class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post-delete' object.id %}">Delete</a>
+                 </div>
+               {% endif %}
+             <img style=" border-radius: 10px 10px;
+                            height: 10rem;"     src="{{ object.image.url }}">
+           </div>
            <h2>{{ object.title }}</h2>
         <div class="span1">{{ object.content }}</div>
-          <p class="btn btn-danger btn-sm mt-1 mb-1" style="color: white; font-weight: bold;">Comments</p>
            {% if comments %}
                 {% for comment in comments %}
                  <div class="comment">

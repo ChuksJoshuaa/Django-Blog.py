@@ -40,7 +40,7 @@ class list_view(LoginRequiredMixin, ListView):
     template_name = "post_home.html"
     context_object_name = 'posts'
     ordering = ['-date_posted'] # it is use to set the post to the current one
-    paginate_by = 4 #It is use to divide the posts in a single page
+    paginate_by = 3 #It is use to divide the posts in a single page
 
 class Userlist_view(ListView):
     model = postmode

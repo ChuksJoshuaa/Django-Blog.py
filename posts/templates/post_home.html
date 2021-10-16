@@ -10,6 +10,8 @@
           <p><span><a style="text-decoration: none;"
                       href="{% url 'user-post' instance.author.username %}">{{ instance.author}}</a>
           </span> on {{ instance.date_posted|date:"F d, Y" }}</p>
+           <img style=" border-radius: 10px 10px;
+                        height: 10rem;"     src="{{ instance.image.url }}">
         <h2>{{ instance.title }}</h2>
         <div class="span1">{{ instance.content|truncatewords:30 }}<span class="span2"><a href="{{ instance.get_absolute_url }}">Read more...</a></span></div>
        </div>
