@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class postmode(models.Model):
-    image = models.ImageField(upload_to='myApp/posts/media/')
     title = models.CharField(max_length=60)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
