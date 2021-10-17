@@ -14,7 +14,7 @@ main {
    max-width: 980px;
    width: 90%;
    margin: 0 auto;
-   margin-bottom: 10%;
+   margin-bottom: 20%;
 }
 
 header {
@@ -337,21 +337,12 @@ button {
   background: white;
 }
 
-section {
-  width: 100%;
-  display: none;
-  background: #ccc;
-  height: 5vh;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: underline;
-}
-
 .footer {
-  height: 170px;
-  width: 100%;
-  display: inline-block;
+   position: relative;
+   top: 120%;
+   background: black;
+   height: 4.5rem;
+   width: 100%;
 }
 
 .footer1 {
@@ -370,8 +361,8 @@ section {
 
 .icons {
   position: relative;
-  right: 7%;
-  padding: 10px;
+  right: 6%;
+  padding: 2px;
   display: flex;
   width: 20%;
   justify-content: space-around;
@@ -422,10 +413,10 @@ section {
 }
 
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 900px) {
 
     main {
-      margin-bottom: 50%;
+      margin-bottom: 60%;
     }
 
 }
@@ -434,6 +425,10 @@ section {
     .icons {
      width: 40%;
      right: 12%;
+    }
+
+    main {
+     margin-bottom: 90%;
     }
 
 }

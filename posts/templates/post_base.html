@@ -45,38 +45,21 @@
                </div>
          </header>
       </div>
-     <main>
+    <main>
        <div class="main">
              <div class="main1">
                  {% if messages %}
                    {% for message in messages %}
                       <div class="message">{{ message }}</div>
-                    {% endfor %}
+                   {% endfor %}
                  {% endif %}
                 <br>
-             {% block content %}
-             replace me
-             {% endblock %}
-            </div>
+                 {% block content %}
+                  replace me
+                 {% endblock %}
+             </div>
        </div>
-
-      <!--<div class="footer">
-			<div class="footer1">
-
-				<img  width="80px;" style="border-radius: 50%;" src="{% static 'posts/media/Blog.jpg'%}">
-
-				<p class="footer-company-name">ChuksMbanaso© 2021</p>
-
-				<div class="icons">
-					<a href="https://www.facebook.com/chuks.j.m"><i class="fa fa-facebook"></i></a>
-					<a href="https://www.twitter.com/Chuksmbanaso"><i class="fa fa-twitter"></i></a>
-					<a href="https://www.linkedin.com/in/chukwudi-mbanaso-5b931a164/"><i class="fa fa-linkedin"></i></a>
-					<a href="https://github.com/ChuksMbanaso"><i class="fa fa-github"></i></a>
-				</div>
-
-			</div>
-      </div>-->
-  </main>
+    </main>
   </body>
 </html>
 
