@@ -1,4 +1,5 @@
 from django.urls import reverse
+from django.core.files.storage import default_storage as storage
 from django.db import models
 from django.utils import timezone
 from PIL import Image
@@ -17,15 +18,18 @@ class postmode(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+        if not self.title and self.content:
+            return
 
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
-
+        super(postmode, self).save()
+        if self.image:
+            size = 200, 200
+            image = Image.open(self.image)
+            image.thumbnail(size, Image.ANTIALIAS)
+            fh = storage.open(self.image.name, "w")
+            format = 'png'  # You need to set the correct image format here
+            image.save(fh, format)
+            fh.close()
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={"id": self.id})

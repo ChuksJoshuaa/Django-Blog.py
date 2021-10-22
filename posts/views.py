@@ -32,6 +32,8 @@ def aboutview(request):
      return render(request, "post_about.html", context)
 
 
+
+
 #if you want to use a class based view:
 #Note class based view use object_list in ListView but we are using posts
 

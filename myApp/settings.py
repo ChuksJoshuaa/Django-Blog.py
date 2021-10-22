@@ -13,6 +13,8 @@ import os.path
 import django_heroku
 import os
 from pathlib import Path
+import cloudinary_storage
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,6 +36,7 @@ ALLOWED_HOSTS = ['mysapaapp.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
     'django.contrib.admin',
     'crispy_forms',
     'django.contrib.auth',
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
 
     #my_own_app
     "product",
@@ -132,12 +136,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
+#PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
 
-#STATIC_URL = '/static/'
-#STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'chuksmbanaso',
+    'API_KEY': '423979199723327',
+    'API_SECRET': 'ESQWs8zmwee3iCWooKfMQ4XqOi4'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ROOT = BASE_DIR / 'media'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'post-home'
