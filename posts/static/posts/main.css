@@ -6,12 +6,13 @@
  box-sizing: border-box;
 }
 body {
-  background: rgba(190, 197, 209, 0.4);
+  /*background: rgba(190, 197, 209, 0.4);*/
+  overflow-x: hidden;
 }
 
 main {
-   height: 800px;
-   max-width: 980px;
+   max-width: 1200px;
+   display: grid;
    width: 90%;
    margin: 0 auto;
    margin-bottom: 20%;
@@ -335,28 +336,6 @@ button {
 
 .media0 {
   background: white;
-}
-
-.footer {
-   position: relative;
-   top: 120%;
-   background: black;
-   height: 4.5rem;
-   width: 100%;
-}
-
-.footer1 {
-  position: relative;
-  left: 40%;
-}
-
-.footer1 p {
-  color: blue;
-  font-size: 1rem;
-  font-family: "Bonheur Royale", cursive;
-  position: relative;
-  right: 2%;
-
 }
 
 .icons {
