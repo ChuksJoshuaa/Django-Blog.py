@@ -47,15 +47,8 @@ INSTALLED_APPS = [
     'cloudinary',
 
     #my_own_app
-    "product",
-    "pages",
-    "game",
-    "school",
-    "Blog",
-    "sapa",
-    "posts",
-    "users",
-
+      "posts",
+      "users",
 ]
 
 MIDDLEWARE = [
