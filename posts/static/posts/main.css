@@ -5,160 +5,355 @@
  padding: 0;
  box-sizing: border-box;
 }
+
 body {
-  /*background: rgba(190, 197, 209, 0.4);*/
+  background: white;
   overflow-x: hidden;
 }
 
 main {
-   max-width: 1200px;
-   display: grid;
-   width: 90%;
-   margin: 0 auto;
-   margin-bottom: 20%;
-}
-
-header {
-   /*background: rgb(64, 61, 55);*/
+   height: 500px;
+   max-width: 980px;
    width: 100%;
+   margin: 0 auto;
+}
+.main1 {
    display: flex;
-   justify-content: space-around;
-   align-items: center;
-   margin-bottom: 25px;
+   width: 40%;
+   margin: 10px;
+   justify-content: space-between;
+   margin-bottom: 10px;
 }
 
-#header1 {
+@media screen and (max-width: 1163px) {
+   .main1 {
+     flex-direction: column;
+     width: 80%;
+     margin-left: 50px;
+   }
+
+}
+
+@media screen and (max-width: 701px) {
+   .main1 {
+     margin-left: 30px;
+   }
+}
+
+nav {
+  height: 5rem;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
 }
 
-/*#header1 h3 {
-  white-space: normal;
-  z-index: 1;
-  display: inline-block;
-  font-weight: bold;
-  font-family: 'Ubuntu', sans-serif;
-  line-height: 10px;
-  font-size: 1.5rem;
 
+#header1 {
+  display: flex;
+  width: 20%;
+  justify-content: space-around;
+  align-items: center;
 }
-
-#header1 h3 a {
-  text-decoration: none;
-  color: red;
-  list-style: none;
-}
-
-#header1 h3 a:hover {
-   color: white;
-}*/
-
 
 #header1 img {
    display: inline-block;
+   position: relative;
+   left: 15%;
 }
 
 #header1 ul {
-  display: inline-block;
   font-family: 'Ubuntu', sans-serif;
-  display: flex;
-  flex-wrap: no-wrap;
-  justify-content: space-around;
-  font-size: 1.3rem;
 }
 
 ul li {
   list-style: none;
-  margin-left: 0.5em;
   margin-top: 1em;
-
+  font-size: 1.1rem;
 }
 
 #header1 ul li a {
    text-decoration: none;
-   color: red;
+   color: black;
+   font-weight: 700;
    transition: color 500ms ease;
 }
 
 #header1 ul li a:hover {
-   color: white;
+   color: crimson;
 }
 
 .log {
   display: flex;
   flex-wrap: no-wrap;
   justify-content: space-between;
-  padding: 10px;
-  margin: 10px;
   align-items: center;
-  margin: 1em;
   position: relative;
-  top: 5%;
+  right: 5%;
 }
 
 .log a {
-   font-family: 'Ubuntu', sans-serif;
-   text-decoration: none;
-   color: red;
-   margin: 10px;
-   margin-left: 0;
-   font-size: 1em;
-   transition: color 500ms ease;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
+  font-weight: 700;
+  font-size: 1.1em;
+  transition: color 0.3s linear;
 }
 
 .log a:hover {
+   color: crimson;
+}
+
+.nav-toggle {
+   display: none;
+}
+
+@media screen and (max-width: 800px) {
+   #header1 {
+     width: 30%;
+   }
+
+    #header1 img {
+       display: inline-block;
+       position: relative;
+       left: 5%;
+    }
+
+    #header1 ul li {
+       position: relative;
+       left: 10%;
+
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .log a {
+      font-size: 1rem;
+    }
+
+    #header ul li {
+      font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+   .log {
+     right: 2%;
+   }
+
+   .log a {
+     margin: 0 5px;
+   }
+}
+@media screen and (max-width: 394px) {
+
+
+   #header1 ul li i {
+      display: none;
+   }
+}
+
+
+
+
+.main-home {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 30px;
+}
+
+.banner {
+  display: grid;
+  min-height: 60vh;
+  text-align: center;
+  place-items: center;
+}
+
+.main-home-sub h1 {
+  font-size: 2.5rem;
+  font-family: "poppins", sans-serif;
+}
+
+.main-home-sub p {
+  font-family: "Ubuntu", sans-serif;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: black;
+  font-size: 700;
+}
+
+@media screen and (max-width: 336px) {
+   .main-home-sub p {
+      font-size: 1rem;
+   }
+}
+
+.latest {
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.latest h1 {
+  font-size: 1.4rem;
+  font-family: "poppins", sans-serif;
+  color: red;
+}
+.unde {
+  height: 0.1rem;
+  width: 5%;
+  background: black;
+}
+
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: #222;
+  padding: 0.375rem 0.75rem;
+  letter-spacing: 0.25rem;
+  display: inline-block;
+  transition: all 0.3s linear;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border: 2px solid #222;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+.btn:hover {
+  color: #fff;
+  background: rgb(16, 42, 66);
+}
+.btn-white {
+  color: #222;
+  border-color: #222;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+}
+.btn:hover {
+  background: rgb(16, 42, 66);
   color: white;
 }
 
-.main {
-   position: relative;
-   left: 55px;
-   top: 27px;
-   max-width: 980px;
-   width: 90%;
+.second-main {
+  max-width: 980px;
+  margin: 0 auto;
+  width: 50%;
 }
 
-.main1 {
-   height: 250px;
-
-   /*background: rgb(169, 172, 194);*/
-   position: relative;
-   display: grid;
+.update a {
+  font-size: 0.6rem;
+  padding: 5px 5px;
 }
+
+.delete a {
+  font-size: 0.6rem;
+  padding: 5px 5px;
+}
+
+
 
 .second1 {
   border: 1px solid silver;
-  width: 80%;
+  width: 100%;
   opacity: 0.8;
-  margin-bottom: 20px;
+  margin: 10px;
+  margin-bottom: 10px;
   background: white;
   display: grid;
-  grid-template-columns: 11% 89%;
+  grid-template-columns: 12% 88%;
 }
+
+.second12 {
+  border: 1px solid silver;
+  width: 100%;
+  opacity: 0.8;
+  margin: 10px;
+  margin-bottom: 10px;
+  background: white;
+  display: grid;
+  grid-template-columns: 7% 93%;
+}
+
+
+
 .second1 img {
-   width: 60px;
+   width: 40px;
    border-radius: 50%;
    height: 50px;
    margin: 10px;
+   margin-right: 5px;
+}
 
+.second12 img {
+   width: 40px;
+   border-radius: 50%;
+   height: 50px;
+   margin: 10px;
+   margin-right: 5px;
+}
+
+
+@media screen and (max-width: 700px) {
+   .second-main {
+    width: 100%;
+   }
+
+   .second1 {
+     position: relative;
+     left: 2%;
+   }
+
+   .second12 {
+     position: relative;
+     right: 3%;
+   }
+}
+
+@media screen and (max-width: 970px) {
+  .second12 img {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 1165px) {
+   .second1 {
+     grid-template-columns: 7% 93%;
+   }
+}
+
+#box {
+ border: 1px solid black;
+ color: black;
+ background: white;
+ transition: all 0.3s linear;
+}
+
+#box:hover {
+color: white;
+background: black;
 }
 
 .second {
    margin: 10px;
+   margin-right: 10px;
    background: white;
 }
 
 .second img {
   width: 250px;
-
 }
 
 
 .second p {
    font-size: 0.7em;
    margin-left: 10px;
-   color: grey;
+   color: red;
    border-bottom: 1px solid black;
 }
 
@@ -182,8 +377,10 @@ ul li {
 .span1 {
    font-size: 0.8em;
    margin-left: 10px;
-   font-family: "lato", sans-serif;
    margin-bottom: 20px;
+   color: black;
+   width: 100%;
+   letter-spacing: 0.05em;
 }
 
 .span2 {
@@ -193,7 +390,8 @@ ul li {
 .span2 a {
     text-decoration: none;
     font-size: 0.8em;
-    color: brown;
+    color: crimson;
+    background: transparent;
 }
 
 .comment span {
@@ -210,7 +408,7 @@ ul li {
    font-size: 0.7rem;
    margin-left: 10px;
    font-weight: bold;
-   color: black;
+   color: crimson;
    border-bottom: none;
    margin-bottom: 0;
 }
@@ -226,7 +424,7 @@ ul li {
 .cont {
   position: relative;
   left: 2%;
-  width: 70%;
+  width: 90%;
 
 }
 
@@ -347,74 +545,20 @@ button {
   justify-content: space-around;
 }
 
-.fa-facebook {
-  color: red;
-  font-size: 1.2rem;
-}
-
-.fa-facebook:hover {
-  color: white;
-}
-
-.fa-twitter {
-  color: red;
-  font-size: 1.2rem;
-}
-
-.fa-twitter:hover {
-  color: white;
-}
-
-.fa-linkedin {
-  color: red;
-  font-size: 1.2rem;
-}
-
-.fa-linkedin:hover {
-  color: white;
-}
-
-.fa-github {
-  color: red;
-  font-size: 1.2rem;
-}
-
-.fa-github:hover {
-  color: white;
-}
-
 .tion {
   display: flex;
   flex-direction: column;
 }
 .tion img {
-  width: 250px;
+  width: 50%;
 }
-
-
-@media screen and (max-width: 900px) {
-
-    main {
-      margin-bottom: 60%;
-    }
-
-}
-@media screen and (min-width: 551px) and (max-width: 900px) {
-
-    .icons {
-     width: 40%;
-     right: 12%;
-    }
-
-    main {
-     margin-bottom: 90%;
-    }
-
-}
-
-
 
 @media screen and (max-width: 550px) {
+      nav {
+        overflow: hidden;
+        width: 100%;
+      }
+
      main {
        position: relative;
        right: 5%;
@@ -425,17 +569,15 @@ button {
        width: 100%;
      }
 
-     header {
-       position: relative;
-       font-size: 0.9rem;
-       margin-left: 20px;
-       width: 100%;
-     }
-
 
      .second1 img {
        width: 100%;
      }
+
+     .second12 img {
+        width: 100%;
+     }
+
 
      .media1 p {
        width: 100%;
@@ -474,28 +616,109 @@ button {
        right: 9%;
      }
 }
-@media screen and (max-width: 359px) {
-   #header1 ul li i {
-    display: none;
+
+.last {
+ display: grid;
+ grid-template-rows: 90% 10%;
+
+}
+
+.footer {
+ height: 200px;
+ background: black;
+ display: grid;
+ place-items: center;
+ margin-bottom: 30px;
+}
+.footer-icon ul{
+  display: flex;
+  width: 20%;
+}
+
+.footer p {
+ color: white;
+ font-family: "lato", sans-serif;
+}
+
+.fa-facebook {
+  color: red;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.fa-facebook:hover {
+  color: blue;
+}
+
+.fa-twitter {
+  color: blue;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.fa-twitter:hover {
+  color: red;
+}
+
+.fa-linkedin {
+  color: red;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.fa-linkedin:hover {
+  color: blue;
+}
+
+.fa-github {
+  color: blue;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.fa-github:hover {
+  color: red;
+}
+
+@media screen and (max-width: 1163px) {
+   .last {
+     height: 1300px;
+
    }
-    /*main {
-     margin-bottom: 100%;
-   }*/
+   .main1 {
+     margin-bottom: 30%;
+   }
+   .house {
+    margin-left: 13%;
+   }
+}
+
+@media screen and (max-width: 650px) {
+   .last {
+     height: 1500px;
+   }
 
 }
 
-@media screen and (max-width: 332px) {
-       main {
-         margin-bottom: 130%;
-       }
-}
-@media screen and (max-width: 298px) {
-       main {
-         margin-bottom: 150%;
-       }
-}
-@media screen and (max-width: 278px) {
-       main {
-         margin-bottom: 180%;
-       }
+@media screen and (max-width: 359px) {
+   .last {
+     height: 1600px;
+   }
+
+   #header1 ul li i {
+     display: non;
+   }
+
 }

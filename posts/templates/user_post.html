@@ -1,8 +1,8 @@
-{% extends "post_base.html" %}
+{% extends "post_base1.html" %}
 {% load static %}
 
 
-{% block content %}
+{% block name %}
     <h3 class="bar" >Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h3>
         {% for instance in posts %}
     <div class="second1">

@@ -19,18 +19,13 @@
       <title>Chuks Project</title>
  </head>
   <body>
-      <div style="background-color: black;">
-         <header>
+      <div style="background: url('{% static 'posts/media/blog image.jpg' %}');
+              background-position: center;background-size: cover;">
+         <nav id="nav">
                <div id="header1">
                    <!--<h3><a href="{% url 'post-home' %}">Blog</a></h3>-->
-                    <img  width="60px;" style="border-radius: 50%;" src="{% static 'posts/media/Blog.jpg'%}" alt="This is my Blog logo">
-                 <ul class="nav2"   style="font-size: 1em;
-                             position: relative;
-                             top: 13%;
-                             color: red;">
-                     <li><a href="{% url 'post-home' %}"><i class="fa fa-home"></i>Home</a></li>
-
-                 </ul>
+                   <img  width="50px;" style="border-radius: 50%;" src="{% static 'posts/media/Blog.jpg'%}" alt="This is my Blog logo">
+                 <ul class="nav2"><li><a href="{% url 'post-home' %}"><i class="fa fa-home"></i>Home</a></li></ul>
                </div>
              <!-- the user authentication system means when the user is logged in -->
                <div class="log">
@@ -43,10 +38,16 @@
                    <div><a href="{% url 'user_register' %}"><i class="fas fa-registered">Register</i></a></div>
                    {% endif %}
                </div>
-         </header>
+         </nav>
+        {% include 'post.html' %}
       </div>
-       <main>
-          <div class="main">
+
+         <div class="latest">
+           <h1>Latest-Posts</h1>
+           <p class="unde"></p>
+         </div>
+      <div class="last">
+         <main>
              <div class="main1">
                  {% if messages %}
                    {% for message in messages %}
@@ -58,8 +59,9 @@
                   replace me
                  {% endblock %}
              </div>
-          </div>
-      </main>
+         </main>
+           {% include 'footer.html' %}
+      </div>
   </body>
 </html>
 

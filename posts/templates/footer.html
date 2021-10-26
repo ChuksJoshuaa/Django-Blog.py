@@ -1,11 +1,15 @@
-<footer>
-       <div class="footer">
+{% load static %}
+    <div class="footer">
+         <img width="60px;" style="border-radius: 50%;" src="{% static 'posts/media/Blog.jpg'%}" alt="This is my Blog logo"">
+         <div class="footer-icon">
+            <ul>
+                 <li><a href="https://github.com/ChuksMbanaso"><i class="fa fa-github"></i></a></li>
+                 <li><a href="https://www.linkedin.com/in/chukwudi-mbanaso-5b931a164/"><i class="fa fa-linkedin"></i></a></li>
+                 <li><a href="https://www.twitter.com/Chuksmbanaso"><i class="fa fa-twitter"></i></a></li>
+                 <li><a href=""><i class="fa fa-facebook"></i></a></li>
+             </ul>
+         </div>
          <p>
-          Copyright &copy; Home Blog Post <br>
-             Chuks <span class="date"></span>. All Rights Reserved
+          Copyright &copy;Chuks <span class="date"></span>. All Rights Reserved
          </p>
-          <button class="btn">
-              <a href="#home"><i class="fas fa-arrow-up"></i></a>
-          </button>
-       </div>
-</footer>
+    </div>

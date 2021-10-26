@@ -1,15 +1,15 @@
-{% extends "post_base.html" %}
+{% extends "post_base1.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
+{% block name %}
 <body style="background-color: white;">
   <div class="both">
 
     <form action="." method="POST">{% csrf_token %}
          <fieldset class="field">
-             <div class="join">Delete Post</div>
-             <h5>Are you sure you want to delete the post "{{ object.title }}" </h5>
-           <div>
-             <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+             <div class="join" style="font-size: 1.3rem;">Delete Post</div>
+             <h5 style="font-size: 1rem;">Are you sure you want to delete the post "{{ object.title }}" </h5>
+           <div class="delete" >
+             <a class="btn btn-outline-danger" type="submit">Yes, Delete</a>
               <a class="btn btn-outline-secondary"  href="{% url 'post-detail' object.id %}">Cancel</a>
            </div>
          </fieldset>

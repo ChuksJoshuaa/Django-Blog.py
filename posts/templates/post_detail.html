@@ -1,12 +1,12 @@
-{% extends "post_base.html" %}
+{% extends "post_base1.html" %}
 {% load static %}
 
 
 <!--The btn is a bootstrap buttons-->
 
 
-{% block content %}
-    <div class="second1">
+{% block name %}
+    <div class="second12">
         <img  width="40px;" src="{{ object.author.profile.image.url}}">
        <div class="second">
            <p> By <span><a href="{% url 'user-post' object.author.username %}">{{ object.author}}</a>
@@ -15,7 +15,7 @@
 
            <div class="tion">
               {% if object.author == user %}
-                  <div style="display: flex; margin: 0 10px;">
+                  <div style="display: flex; margin: 0 10px;" class="update">
                    <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="{% url 'post-update' object.id %}">Update</a>
                    <a style="margin-left: 1%;" class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post-delete' object.id %}">Delete</a>
                  </div>
