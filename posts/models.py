@@ -45,16 +45,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment {}'.format(self.commenter_name)
-
-
-class PostComment(models.Model):
-    sno = models.AutoField(primary_key=True)
-
-class CommentUserProfile(models.Model):
-   user = models.OneToOneField(User, on_delete=models.CASCADE)
-   user_image = models.ImageField(default='default.jpg', upload_to='profile_pics')
-
-
-
-class PostImage(models.Model):
-    image = models.ImageField(upload_to='myApp/posts/media/')
