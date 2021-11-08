@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import postmode,Comment, CommentUserProfile, PostImage
+from .models import postmode,Comment
 from .forms import CommentForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
